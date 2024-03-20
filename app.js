@@ -82,7 +82,13 @@ const port = process.env.PORT || 8000
 const start = async () => {
   try {
     await connectDB(process.env.mongo_uri)
-    app.listen(port, console.log(`Server is listening on the port ${port}`))
+    const server = app.listen(
+      port,
+      console.log(`Server is listening on the port ${port}`)
+    )
+    // For AWS Elastic Bean not to fail on timeout
+    server.keepAliveTimeout = 61 * 1000
+    server.headersTimeout = 65 * 1000 // This should be bigger than `keepAliveTimeout + your server's expected response time`
   } catch (error) {}
 }
 

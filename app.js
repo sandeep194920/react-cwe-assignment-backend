@@ -23,7 +23,7 @@ app.use(morgan('tiny'))
 
 app.use(express.json())
 
-app.get('/contributions', async (req, res) => {
+app.get('/', async (req, res) => {
   const contributions = await Contribution.find()
   const response = contributions.map((contribution, index) => ({
     uuid: contribution._id,

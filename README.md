@@ -4,7 +4,8 @@ This is an Node.js app built with Express and MongoDB to GET, POST and DELETE co
 
 1. Use `node 18` version.
 2. Run `npm install`.
-3. Navigate to [http://localhost:8000/contributions/](http://localhost:8000/contributions/) to make a GET call, and you should see the list of contributions in your browser.
+3. Create a `.env` file in your local and `mongo_uri={URI OF THE DB}`. I can share the URI of the DB with you on email.
+4. Navigate to [http://localhost:8000/contributions/](http://localhost:8000/contributions/) to make a GET call, and you should see the list of contributions in your browser.
 
 ##### Run on POSTMAN
 

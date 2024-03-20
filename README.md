@@ -1,5 +1,7 @@
 #### About
 
+[Endpoint deployed here `http://cwe-node-app-env.eba-pbj4dp9b.ca-central-1.elasticbeanstalk.com/contributions`](http://cwe-node-app-env.eba-pbj4dp9b.ca-central-1.elasticbeanstalk.com/contributions) onto AWS Elastic Block store.
+
 This is an Node.js app built with Express and MongoDB to GET, POST and DELETE contributions' data. In order to test the app locally,
 
 1. Use `node 18` version.

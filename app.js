@@ -38,7 +38,6 @@ app.get('/contributions', async (req, res) => {
 
 // PATCH route to update the status of a contribution by UUID
 app.delete('/contribution/:uuid', async (req, res) => {
-  console.log('REACHED HERE')
   const uuid = req.params.uuid
 
   try {
@@ -73,9 +72,9 @@ app.post('/contributions', async (req, res) => {
   }
 })
 
-app.use('*', (req, res) => {
-  res.status(400).send('Route not found')
-})
+// app.use('*', (req, res) => {
+//   res.status(400).send('Route not found')
+// })
 
 const port = process.env.PORT || 8000
 
@@ -89,7 +88,10 @@ const start = async () => {
     // For AWS Elastic Bean not to fail on timeout
     server.keepAliveTimeout = 61 * 1000
     server.headersTimeout = 65 * 1000 // This should be bigger than `keepAliveTimeout + your server's expected response time`
-  } catch (error) {}
+  } catch (error) {
+    console.error('Error starting server:', error)
+    process.exit(1) // Exit the process with an error code
+  }
 }
 
 start()

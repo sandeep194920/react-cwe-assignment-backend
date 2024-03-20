@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "b2d3dd2a-cd03-4903-9f4d-0c25167ddd04",
+		"name": "CommonWealth (master)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21911553"
+	},
+	"item": [
+		{
+			"name": "contributions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/contributions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contributions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contributions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n      \"status\": \"PENDING\",\n      \"tfsa\": 500,\n      \"rrsp\": 1000\n    },\n    {\n      \"status\": \"PENDING\",\n      \"tfsa\": 500,\n      \"rrsp\": 1000\n    },\n    {\n      \"status\": \"PENDING\",\n      \"tfsa\": 500,\n      \"rrsp\": 1000\n    },\n    {\n      \"status\": \"PENDING\",\n      \"tfsa\": 500,\n      \"rrsp\": 1000\n    },\n    {\n      \"status\": \"PENDING\",\n      \"tfsa\": 500,\n      \"rrsp\": 1000\n    },\n    {\n      \"status\": \"PENDING\",\n      \"tfsa\": 500,\n      \"rrsp\": 1000\n    },\n    {\n      \"status\": \"PROCESSED\",\n      \"tfsa\": 500,\n      \"rrsp\": 1000\n    },\n    {\n      \"status\": \"PROCESSED\",\n      \"tfsa\": 500,\n      \"rrsp\": 1000\n    },\n    {\n      \"status\": \"PROCESSED\",\n      \"tfsa\": 500,\n      \"rrsp\": 1000\n    },\n    {\n      \"status\": \"PROCESSED\",\n      \"tfsa\": 500,\n      \"rrsp\": 1000\n    }\n  ]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/contributions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contributions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contribution",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/contribution/65f61e962c7993c8d19839fe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"contribution",
+						"65f61e962c7993c8d19839fe"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

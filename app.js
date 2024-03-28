@@ -16,8 +16,6 @@ const xss = require('xss-clean') // Sanitizes the user input in req.body, and he
 // }
 // enable cors
 
-app.use(cors())
-
 // For logs we can use morgan package
 const morgan = require('morgan')
 const connectDB = require('./connectdb')
@@ -25,6 +23,8 @@ const connectDB = require('./connectdb')
 app.use(morgan('tiny'))
 
 app.use(express.json())
+
+app.use(cors())
 
 app.get('/contributions', async (req, res) => {
   const contributions = await Contribution.find()

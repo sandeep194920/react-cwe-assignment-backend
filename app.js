@@ -5,14 +5,17 @@ require('dotenv').config()
 const Contribution = require('./models/ContributionSchema')
 const { subMonths } = require('date-fns/subMonths')
 
-// For security, let's use these packages
-
 const cors = require('cors') // to allow access to other domains
 const helmet = require('helmet') // sets various HTTP headers to prevent numerous possible attacks.
 const xss = require('xss-clean') // Sanitizes the user input in req.body, and headers to protects us from cross-site-scripting attacks
 
+// Set up CORS options to allow requests from any origin
+const corsOptions = {
+  origin: '*', // Allow requests from any origin
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'], // Specify the allowed HTTP methods
+}
 app.use(helmet())
-app.use(cors())
+app.use(cors(corsOptions))
 app.use(xss())
 
 // For logs we can use morgan package

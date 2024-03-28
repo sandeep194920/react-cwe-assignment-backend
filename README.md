@@ -1,6 +1,6 @@
 #### About
 
-Endpoint deployed here [`http://cwe-node-app-env.eba-pbj4dp9b.ca-central-1.elasticbeanstalk.com/contributions`](http://cwe-node-app-env.eba-pbj4dp9b.ca-central-1.elasticbeanstalk.com/contributions) onto AWS Elastic Block store.
+Endpoint deployed on Render platform [https://react-cwe-assignment-backend.onrender.com/contributions](https://react-cwe-assignment-backend.onrender.com/contributions). _Note that the initial call might take around a minute to load as I have deployed it on free-tier_.
 
 This is a `Node.js` app built with `Express` and `MongoDB` to GET, POST and DELETE contributions' data. In order to test the app locally,
 

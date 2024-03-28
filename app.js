@@ -14,24 +14,9 @@ const xss = require('xss-clean') // Sanitizes the user input in req.body, and he
 //   origin: '*', // Allow requests from any origin
 //   methods: ['GET', 'POST', 'PATCH', 'DELETE'], // Specify the allowed HTTP methods
 // }
-app.use(helmet())
 // enable cors
-app.use(
-  cors({
-    origin: true,
-    optionsSuccessStatus: 200,
-    credentials: true,
-  })
-)
-app.options(
-  '*',
-  cors({
-    origin: true,
-    optionsSuccessStatus: 200,
-    credentials: true,
-  })
-)
-app.use(xss())
+
+app.use(cors())
 
 // For logs we can use morgan package
 const morgan = require('morgan')

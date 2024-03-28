@@ -10,12 +10,27 @@ const helmet = require('helmet') // sets various HTTP headers to prevent numerou
 const xss = require('xss-clean') // Sanitizes the user input in req.body, and headers to protects us from cross-site-scripting attacks
 
 // Set up CORS options to allow requests from any origin
-const corsOptions = {
-  origin: '*', // Allow requests from any origin
-  methods: ['GET', 'POST', 'PATCH', 'DELETE'], // Specify the allowed HTTP methods
-}
+// const corsOptions = {
+//   origin: '*', // Allow requests from any origin
+//   methods: ['GET', 'POST', 'PATCH', 'DELETE'], // Specify the allowed HTTP methods
+// }
 app.use(helmet())
-app.use(cors(corsOptions))
+// enable cors
+app.use(
+  cors({
+    origin: true,
+    optionsSuccessStatus: 200,
+    credentials: true,
+  })
+)
+app.options(
+  '*',
+  cors({
+    origin: true,
+    optionsSuccessStatus: 200,
+    credentials: true,
+  })
+)
 app.use(xss())
 
 // For logs we can use morgan package
